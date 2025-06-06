@@ -16,25 +16,28 @@
       display: block;
       margin: auto;
     }
-    .watermark {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: rotate(-30deg) translate(-50%, -50%);
-      font-size: 36px;
-      color: rgba(180, 180, 180, 0.3);
-      pointer-events: none;
-      user-select: none;
+  @media print {
+    body {
+      display: none !important;
     }
+  }
   </style>
 </head>
 <body oncontextmenu="return false"> <!-- Disable right click -->
 
 <div id="pdfViewer">
-  <div class="watermark">CONFIDENTIAL</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  // Blok Ctrl+P
+  document.addEventListener("keydown", function (e) {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') {
+      e.preventDefault();
+      alert("Printing is disabled on this document.");
+    }
+  });
+</script>
 <script src="viewer.js"></script>
 </body>
 </html>
