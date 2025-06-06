@@ -1,6 +1,6 @@
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-const url = 'sample.pdf';
+const url = 'TUGAS_AKMEN.pdf';
 const pdfViewer = document.getElementById('pdfViewer');
 
 function renderPage(pdf, pageNumber) {
